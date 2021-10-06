@@ -8,13 +8,14 @@ go run server.go
 but no has live reload
 ## API for testing in TDD
 
+
 ## Environment variables
 
-DBHOST
-DBUSER
-DBPASSWORD
-DBNAME
-DBPORT
+DBHOST <br>
+DBUSER <br>
+DBPASSWORD <br>
+DBNAME <br>
+DBPORT <br>
 
 ## Routes
 
