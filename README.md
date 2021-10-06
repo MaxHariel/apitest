@@ -2,7 +2,12 @@
 
 docker-compose up
 
-## API for testing in DDD
+## Run with go run
+
+go run server.go
+but no has live reload
+## API for testing in TDD
+
 
 ## Environment variables
 
