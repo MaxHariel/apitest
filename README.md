@@ -11,3 +11,10 @@ DBUSER
 DBPASSWORD
 DBNAME
 DBPORT
+
+## Routes
+
+POST in "/users"
+{
+    "name" : "Exemplo"
+}
