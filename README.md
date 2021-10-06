@@ -2,15 +2,15 @@
 
 docker-compose up
 
-## API for testing in TDD
+## API for testing in DDD
 
 ## Environment variables
 
-DBHOST
-DBUSER
-DBPASSWORD
-DBNAME
-DBPORT
+DBHOST <br>
+DBUSER <br>
+DBPASSWORD <br>
+DBNAME <br>
+DBPORT <br>
 
 ## Routes
 
