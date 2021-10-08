@@ -5,16 +5,17 @@ import (
 	"apitest/domain/repository"
 )
 
+//UserApp implements UserAppInterface
+var _ UserAppInterface = &userApp{}
+
 type userApp struct {
 	us repository.UserRepository
 }
 
 type UserAppInterface interface {
-	SaveUser(*entity.User) (*entity.User, map[string]string)
+	SaveUser(*entity.User) (*entity.User, error)
 }
 
-var _ UserAppInterface = &userApp{}
-
-func (u *userApp) SaveUser(user *entity.User) (*entity.User, map[string]string) {
+func (u *userApp) SaveUser(user *entity.User) (*entity.User, error) {
 	return u.us.SaveUser(user)
 }

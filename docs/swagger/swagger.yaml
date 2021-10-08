@@ -1,0 +1,58 @@
+basePath: /v2
+definitions:
+  entity.User:
+    properties:
+      created_at:
+        example: "2021-10-06T13:47:02.127645837-03:00"
+        type: string
+      deleted_at:
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: Max
+        type: string
+      updated_at:
+        example: "2021-10-06T13:47:02.127645837-03:00"
+        type: string
+    type: object
+  entity.UserDTO:
+    properties:
+      name:
+        example: Max
+        type: string
+    type: object
+host: petstore.swagger.io
+info:
+  contact: {}
+  description: Api
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /users:
+    post:
+      consumes:
+      - application/json
+      description: Add new user
+      parameters:
+      - description: User Data
+        in: body
+        name: tag
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UserDTO'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: User Data
+          schema:
+            $ref: '#/definitions/entity.User'
+      summary: Add new user
+      tags:
+      - /users
+swagger: "2.0"
