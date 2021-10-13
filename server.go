@@ -34,23 +34,22 @@ func main() {
 	if err != nil {
 		logger.Fatal(err)
 	}
-
 	if err = services.AutoMigrate(); err != nil {
 		logger.Fatal(err)
 	}
 
 	e := echo.New()
-
 	//Config Routes
 	interfaces.Routes(e, services)
 
-	e.Use(logger.LoggerWithConfig())
+	f, log := logger.LoggerWithConfig()
+	defer f.Close()
+	e.Use(log)
 	e.Use(middleware.Recover())
 
 	p := prometheus.NewPrometheus("echo", nil)
 	p.Use(e)
 
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
-
 	e.Logger.Fatal(e.Start(":1323"))
 }

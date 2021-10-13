@@ -17,7 +17,6 @@ type Repositories struct {
 }
 
 func InitConfiguration() (*Repositories, error) {
-
 	DbHost := os.Getenv("DBHOST")
 	DbUser := os.Getenv("DBUSER")
 	DbPassword := os.Getenv("DBPASSWORD")

@@ -3,7 +3,6 @@ package user
 import (
 	"apitest/application"
 	"apitest/domain/entity"
-	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -38,7 +37,6 @@ func (u *Users) SaveUser(c echo.Context) error {
 	}
 	newUser, err := u.ua.SaveUser(&user)
 	if err != nil {
-		fmt.Println("------------------->", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error())
 	}
 
