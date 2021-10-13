@@ -6,7 +6,7 @@ docker-compose up
 
 go run server.go
 but no has live reload
-## API for testing in TDD
+## API for testing in DDD
 
 
 ## Environment variables
